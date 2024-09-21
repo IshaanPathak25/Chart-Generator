@@ -9,7 +9,7 @@
 
 <body>
     <div class="container">
-        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 30px; font-weight: bold;">Real Time Chart Creator</h1>
+        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 30px; font-weight: bold;">Chart Now</h1>
         <div class="chart-container">
             <div id="canvas-container"></div>
         </div>
@@ -22,10 +22,11 @@
                 <option value="doughnut">Doughnut</option>
                 <option value="radar">Radar</option>
             </select>
-            <input type="text" id="labelInput" class="input" placeholder="Label">
-            <input type="number" id="dataInput" class="input" placeholder="Data" onkeydown="if (event.key === 'Enter') addData()">
+            <input type="text" id="labelInput" class="input" placeholder="Name">
+            <input type="number" id="dataInput" class="input" placeholder="Data" onkeydown="if (event.key === 'Enter') { addData(); document.getElementById('labelInput').focus(); }">
             <button onclick="addData()" class="btn">Add Entry</button>
-            <button onclick="clearChart()" class="btn">New Chart</button>
+            <button onclick="confirmClearChart()" class="btn">New Chart</button>
+            <button onclick="toggleDarkMode()" class="btn" id="dark-mode-toggle"> Lights off</button>
         </div>
 
     </div>
