@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Live Chart Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center; font-family: Arial, sans-serif; font-size: 30px; font-weight: bold;">Real Time Chart Creator</h1>
+        <div class="chart-container">
+            <div id="canvas-container"></div>
+        </div>
+
+        <div class="controls">
+            <select id="chartType" class="select" onchange="updateChartType()">
+                <option value="bar">Bar</option>
+                <option value="line">Line</option>
+                <option value="pie">Pie</option>
+                <option value="doughnut">Doughnut</option>
+                <option value="radar">Radar</option>
+            </select>
+            <input type="text" id="labelInput" class="input" placeholder="Label">
+            <input type="number" id="dataInput" class="input" placeholder="Data" onkeydown="if (event.key === 'Enter') addData()">
+            <button onclick="addData()" class="btn">Add Entry</button>
+            <button onclick="clearChart()" class="btn">New Chart</button>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
