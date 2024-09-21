@@ -57,3 +57,22 @@ body{
     align-items: center;
     justify-content: center;
 }
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+  
+.dark-mode .container {
+    background-color: #444;
+    color: #fff;
+}
+  
+.dark-mode .chart-container {
+    background-color: #555;
+}
+ 
+.dark-mode .btn {
+    background-color: #303f9f;
+    color: #fff;
+}
