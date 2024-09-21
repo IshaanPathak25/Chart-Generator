@@ -1,7 +1,7 @@
 let chartData = {
     labels: [],
     datasets: [{
-        label: '# of Values',
+        label: '# of values',
         data: [],
         backgroundColor: [
             'rgba(255, 99, 132, 0.5)',
@@ -133,10 +133,43 @@ function removeData(datasetIndex, index) {
     // Do nothing
 }
 
+function confirmClearChart(){
+    if(confirm("Are you sure you want to delete this chart?")) {
+        clearChart();
+    }
+}
+
 function clearChart() {
   chartData.labels = [];
   chartData.datasets.forEach(dataset => {
     dataset.data = [];
   });
   myChart.update();
+}
+
+let isDarkMode = false;
+
+function toggleDarkMode(){
+    isDarkMode = !isDarkMode;
+    updateDarkMode();
+    updateButtonText();
+}
+
+function updateDarkMode() {
+    if(isDarkMode) {
+        document.body.classList.add("dark-mode");
+    }
+    else {
+        document.body.classList.remove("dark-mode");
+    }
+}
+
+function updateButtonText() {
+    const button = document.getElementById("dark-mode-toggle");
+    if(isDarkMode) {
+        button.textContent = "Lights On";
+    }
+    else {
+        button.textContent = "Lights Off";
+    }
 }
