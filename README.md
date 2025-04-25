@@ -11,7 +11,3 @@ Here’s a brief and clean project description you can add to your `README.md` f
 - User-friendly data input interface
 - Real-time chart preview
 - Responsive design for different screen sizes
-
----
-
-Let me know if you want to include installation steps, demo images, or links!
